@@ -6,7 +6,7 @@ Big Data Institute, Central South University, Changsha, China<br>
 
 **Accepted at ICME 2026 as an Oral presentation.**
 
-[Project page](https://tripah.rainy-elm-2952.chatgpt.site) · [arXiv](https://arxiv.org/abs/2606.27010) · [Paper PDF](website/assets/tripah-paper.pdf) · [Code](https://github.com/Medical-Multi-Agent-AI/TriPAH)
+[Project page](https://tripah.rainy-elm-2952.chatgpt.site) · [arXiv](https://arxiv.org/abs/2606.27010) · [Paper PDF](website/assets/tripah-paper.pdf) · [Code](https://github.com/Medical-Multi-Agent-AI/TriPAH) · [Data resources](https://huggingface.co/datasets/Jiaminggod/TriPAH)
 
 TriPAH learns compact binary representations for bidirectional retrieval between medical images and clinical text. It combines image, text, and prompt views to address noisy clinical language, long-tailed labels, and unstable quantization.
 
@@ -63,6 +63,8 @@ The backbone is `ViT-B-16-quickgelu` with `metaclip_fullcc` weights. Training in
 This option supplies **backbone** weights; `--pretrained` supplies a trained **TriPAH** checkpoint.
 
 ## Prepare the data
+
+Dataset sources and preparation notes for all three benchmarks are available in the [Hugging Face resource repository](https://huggingface.co/datasets/Jiaminggod/TriPAH). That public repository currently contains documentation only; restricted source records are not redistributed.
 
 Obtain ODIR-5K, IU-Xray, or MIMIC-CXR from their respective providers and follow their access conditions. Raw images, reports, generated dataset files, pretrained weights, and experiment checkpoints are not distributed in this repository.
 
