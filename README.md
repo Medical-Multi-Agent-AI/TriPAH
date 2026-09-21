@@ -4,7 +4,9 @@
 Big Data Institute, Central South University, Changsha, China<br>
 <sup>*</sup>Corresponding authors
 
-[Project page](https://tripah.rainy-elm-2952.chatgpt.site) · [Paper](website/assets/tripah-paper.pdf) · [Code](https://github.com/Medical-Multi-Agent-AI/TriPAH)
+**Accepted at ICME 2026 as an Oral presentation.**
+
+[Project page](https://tripah.rainy-elm-2952.chatgpt.site) · [arXiv](https://arxiv.org/abs/2606.27010) · [Paper PDF](website/assets/tripah-paper.pdf) · [Code](https://github.com/Medical-Multi-Agent-AI/TriPAH)
 
 TriPAH learns compact binary representations for bidirectional retrieval between medical images and clinical text. It combines image, text, and prompt views to address noisy clinical language, long-tailed labels, and unstable quantization.
 
@@ -181,15 +183,14 @@ website/               Public project page, paper, and figures
 
 ## Citation
 
-If you use TriPAH in your research, please cite the manuscript:
+If you use TriPAH in your research, please use the following arXiv citation:
 
 ```bibtex
-@misc{bian2026tripah,
-  title  = {{TriPAH}: Imbalance-Aware Tri-Prompt Affinity Hashing for Cross-Modal Medical Retrieval},
-  author = {Bian, Jiaming and Li, Songming and Song, Yurui and Chen, Yunfei and Cao, Yichao and Long, Jun},
-  year   = {2026},
-  note   = {Manuscript},
-  url    = {https://github.com/Medical-Multi-Agent-AI/TriPAH}
+@article{bian2026tripah,
+  title={TriPAH: Imbalance-Aware Tri-Prompt Affinity Hashing for Cross-Modal Medical Retrieval},
+  author={Bian, Jiaming and Li, Songming and Song, Yurui and Chen, Yunfei and Cao, Yichao and Long, Jun},
+  journal={arXiv preprint arXiv:2606.27010},
+  year={2026}
 }
 ```
 

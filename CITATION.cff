@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "Please cite the arXiv paper when using TriPAH."
+title: "TriPAH: Imbalance-Aware Tri-Prompt Affinity Hashing for Cross-Modal Medical Retrieval"
+type: software
+authors:
+  - family-names: Bian
+    given-names: Jiaming
+  - family-names: Li
+    given-names: Songming
+  - family-names: Song
+    given-names: Yurui
+  - family-names: Chen
+    given-names: Yunfei
+  - family-names: Cao
+    given-names: Yichao
+  - family-names: Long
+    given-names: Jun
+url: https://github.com/Medical-Multi-Agent-AI/TriPAH
+preferred-citation:
+  type: article
+  title: "TriPAH: Imbalance-Aware Tri-Prompt Affinity Hashing for Cross-Modal Medical Retrieval"
+  authors:
+    - family-names: Bian
+      given-names: Jiaming
+    - family-names: Li
+      given-names: Songming
+    - family-names: Song
+      given-names: Yurui
+    - family-names: Chen
+      given-names: Yunfei
+    - family-names: Cao
+      given-names: Yichao
+    - family-names: Long
+      given-names: Jun
+  journal: "arXiv preprint arXiv:2606.27010"
+  year: 2026
+  doi: 10.48550/arXiv.2606.27010
+  url: https://arxiv.org/abs/2606.27010

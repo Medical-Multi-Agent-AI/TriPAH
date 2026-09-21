@@ -15,12 +15,13 @@
   <main id="main">
     <section class="hero" id="overview">
       <div class="eyebrow">CROSS-MODAL MEDICAL RETRIEVAL</div>
+      <p class="venue">ICME 2026 · Oral</p>
       <h1>Tri<span>PAH</span><span class="hero-period">.</span></h1>
       <p class="paper-title">Imbalance-Aware Tri-Prompt Affinity Hashing<br class="desktop-break"> for Cross-Modal Medical Retrieval</p>
       <p class="authors">Jiaming Bian · Songming Li · Yurui Song · Yunfei Chen<sup>*</sup> · Yichao Cao<sup>*</sup> · Jun Long<sup>*</sup></p>
       <p class="affiliation">Big Data Institute, Central South University, Changsha, China <span>· * Corresponding authors</span></p>
       <p class="hero-intro">Connecting medical images and reports through compact binary codes, with complementary image, text, and prompt views and imbalance-aware learning.</p>
-      <div class="hero-actions"><a class="button primary" href="assets/tripah-paper.pdf">Read the paper <span aria-hidden="true">↗</span></a><a class="button secondary" href="https://github.com/Medical-Multi-Agent-AI/TriPAH">Explore the code <span aria-hidden="true">↗</span></a></div>
+      <div class="hero-actions"><a class="button primary" href="https://arxiv.org/abs/2606.27010">Read the paper <span aria-hidden="true">↗</span></a><a class="button secondary" href="https://github.com/Medical-Multi-Agent-AI/TriPAH">Explore the code <span aria-hidden="true">↗</span></a></div>
       <div class="hero-strip"><span>Medical images ↔ Clinical reports</span><span>Tri-view fusion</span><span>Adaptive hashing</span></div>
     </section>
     <section class="section overview-grid" aria-labelledby="motivation-title">
@@ -41,16 +42,11 @@
       <div class="efficiency"><div><div class="section-kicker">EFFICIENCY</div><h3>Compact codes.<br>Practical retrieval.</h3></div><div><strong>19 s</strong><span>ODIR inference</span></div><div><strong>8 s</strong><span>IU-Xray inference</span></div><div><strong>329 s</strong><span>MIMIC-CXR inference</span></div></div><p class="data-note">Table III: end-to-end code generation and database retrieval on the paper's evaluation setup. These are total benchmark times, not per-query latency.</p>
     </section>
     <section class="section" id="qualitative"><div class="section-kicker">03 / RETRIEVAL EXAMPLES</div><h2>Linking visual findings<br>to clinical descriptions.</h2><p class="section-lead">Qualitative examples from ODIR-5K and IU-Xray illustrate retrieval across different imaging modalities.</p><figure class="wide-figure demo-figure"><a href="assets/demo.pdf" aria-label="Open retrieval examples as a vector PDF"><img src="assets/demo.webp" width="2934" height="1366" alt="Qualitative medical retrieval examples: fundus images and diagnostic reports on ODIR-5K, and chest X-ray findings on IU-Xray." loading="lazy"></a><figcaption><span>Qualitative retrieval · Figure 3 in the paper</span><a href="assets/demo.pdf">View vector PDF ↗</a></figcaption></figure></section>
-    <section class="section citation" id="citation"><div><div class="section-kicker">04 / PAPER & CODE</div><h2>Build on TriPAH.</h2><p>Read the paper for the full formulation, dataset splits, baseline comparisons, and ablations. The repository includes training, evaluation, and dataset preparation code.</p><div class="hero-actions"><a class="button primary" href="assets/tripah-paper.pdf">Paper PDF ↗</a><a class="button secondary" href="https://github.com/Medical-Multi-Agent-AI/TriPAH">GitHub ↗</a></div></div><div class="citation-box"><div class="citation-heading"><h3>Citation</h3><a href="assets/tripah.bib" download>Download BibTeX ↓</a></div><pre><code>@misc{bian2026tripah,
-  title = {TriPAH: Imbalance-Aware Tri-Prompt
-    Affinity Hashing for Cross-Modal
-    Medical Retrieval},
-  author = {Bian, Jiaming and Li, Songming
-    and Song, Yurui and Chen, Yunfei
-    and Cao, Yichao and Long, Jun},
-  year = {2026},
-  note = {Manuscript},
-  url = {https://github.com/Medical-Multi-Agent-AI/TriPAH}
+    <section class="section citation" id="citation"><div><div class="section-kicker">04 / PAPER & CODE</div><h2>Build on TriPAH.</h2><p>Read the paper for the full formulation, dataset splits, baseline comparisons, and ablations. The repository includes training, evaluation, and dataset preparation code.</p><div class="hero-actions"><a class="button primary" href="assets/tripah-paper.pdf">Paper PDF ↗</a><a class="button secondary" href="https://github.com/Medical-Multi-Agent-AI/TriPAH">GitHub ↗</a></div></div><div class="citation-box"><div class="citation-heading"><h3>Citation</h3><a href="assets/tripah.bib" download>Download BibTeX ↓</a></div><pre><code>@article{bian2026tripah,
+  title={TriPAH: Imbalance-Aware Tri-Prompt Affinity Hashing for Cross-Modal Medical Retrieval},
+  author={Bian, Jiaming and Li, Songming and Song, Yurui and Chen, Yunfei and Cao, Yichao and Long, Jun},
+  journal={arXiv preprint arXiv:2606.27010},
+  year={2026}
 }</code></pre></div></section>
   </main>
   <footer><a class="brand" href="#">TriPAH</a><span>Medical-Multi-Agent-AI</span><a href="https://github.com/Medical-Multi-Agent-AI/TriPAH">Source code ↗</a></footer>
