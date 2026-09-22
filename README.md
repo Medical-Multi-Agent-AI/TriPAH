@@ -2,7 +2,7 @@
 
 **Jiaming Bian, Songming Li, Yurui Song, Yunfei Chen<sup>&#42;</sup>, Yichao Cao<sup>&#42;</sup>, Jun Long<sup>&#42;</sup>**<br>
 Big Data Institute, Central South University, Changsha, China<br>
-<sup>&#42;</sup> **Co-corresponding authors: Yunfei Chen, Yichao Cao, and Jun Long.**
+<sup>&#42;</sup> **Co-corresponding authors**
 
 **Accepted at ICME 2026 as an Oral presentation.**
 
