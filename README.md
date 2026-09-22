@@ -6,11 +6,11 @@ Big Data Institute, Central South University, Changsha, China<br>
 
 **Accepted at ICME 2026 as an Oral presentation.**
 
-[Project page](https://tripah.rainy-elm-2952.chatgpt.site) · [arXiv](https://arxiv.org/abs/2606.27010) · [Paper PDF](website/assets/tripah-paper.pdf) · [Code](https://github.com/Medical-Multi-Agent-AI/TriPAH) · [Data resources](https://huggingface.co/datasets/Jiaminggod/TriPAH)
+[Project page](https://medical-multi-agent-ai.github.io/TriPAH/) · [arXiv](https://arxiv.org/abs/2606.27010) · [Paper PDF](docs/assets/tripah-paper.pdf) · [Code](https://github.com/Medical-Multi-Agent-AI/TriPAH) · [Data resources](https://huggingface.co/datasets/Jiaminggod/TriPAH)
 
 TriPAH learns compact binary representations for bidirectional retrieval between medical images and clinical text. It combines image, text, and prompt views to address noisy clinical language, long-tailed labels, and unstable quantization.
 
-![Overview of TriPAH: semantic context adaptive prompting, feature extraction, tri-view semantic fusion, and imbalance-aware multi-task hashing.](website/assets/main-method.webp)
+![Overview of TriPAH: semantic context adaptive prompting, feature extraction, tri-view semantic fusion, and imbalance-aware multi-task hashing.](docs/assets/main-method.webp)
 
 ## Method
 
@@ -24,7 +24,7 @@ The implementation uses a MetaCLIP ViT-B/16 backbone and jointly supports multip
 
 ## Reported results
 
-Mean average precision (mAP, higher is better), averaged over **32-, 64-, and 128-bit** codes in Table I of the [manuscript](website/assets/tripah-paper.pdf):
+Mean average precision (mAP, higher is better), averaged over **32-, 64-, and 128-bit** codes in Table I of the [manuscript](docs/assets/tripah-paper.pdf):
 
 | Dataset | Image → Text | Text → Image |
 | --- | ---: | ---: |

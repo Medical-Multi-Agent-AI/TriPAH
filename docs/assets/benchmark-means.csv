@@ -1,0 +1,4 @@
+dataset,image_to_text_mean_map,text_to_image_mean_map
+ODIR-5K,0.937,0.977
+MIMIC-CXR,0.820,0.889
+IU-Xray,0.896,0.896
