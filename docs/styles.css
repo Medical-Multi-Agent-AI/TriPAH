@@ -65,11 +65,10 @@
 @media(prefers-reduced-motion:reduce){.carousel .slide,.carousel .slide[aria-hidden=true]{transition:none}}
 @media(max-width:760px){.carousel .carousel-controls{grid-template-columns:44px minmax(0,1fr) 44px}.carousel .carousel-arrow{min-width:44px;min-height:44px}}
 
-/* Subtle oval arrows become clearer when the carousel is in use. */
+/* Each oval arrow reveals independently on its own hover or keyboard focus. */
 .carousel-stage{position:relative}
 .carousel .slide{padding-inline:3.5rem}
 .carousel .carousel-arrow{position:absolute;z-index:2;top:calc(1.25rem + var(--figure-heading) + 1rem + var(--figure-height)/2);transform:translateY(-50%);width:48px;height:64px;padding:8px;border:1px solid rgba(75,91,116,.2);border-radius:50%;background:rgba(255,255,255,.88);color:var(--ink);box-shadow:0 2px 10px rgba(16,29,58,.12);opacity:.24;transition:opacity .22s ease,color .22s ease,background-color .22s ease,border-color .22s ease}
-.carousel:hover .carousel-arrow,.carousel:focus-within .carousel-arrow{opacity:.82}
 .carousel .carousel-arrow:hover,.carousel .carousel-arrow:focus-visible{opacity:1;background:rgba(255,255,255,.98);border-color:rgba(18,62,201,.35);color:var(--blue)}
 .carousel .carousel-arrow:focus-visible{outline-offset:-3px}
 .carousel .carousel-arrow[data-slide-prev]{left:.35rem}
