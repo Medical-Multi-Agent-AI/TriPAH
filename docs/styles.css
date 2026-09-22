@@ -65,15 +65,18 @@
 @media(prefers-reduced-motion:reduce){.carousel .slide,.carousel .slide[aria-hidden=true]{transition:none}}
 @media(max-width:760px){.carousel .carousel-controls{grid-template-columns:44px minmax(0,1fr) 44px}.carousel .carousel-arrow{min-width:44px;min-height:44px}}
 
-/* Transparent arrows sit beside the figure instead of in a separate toolbar. */
+/* Subtle oval arrows become clearer when the carousel is in use. */
 .carousel-stage{position:relative}
 .carousel .slide{padding-inline:3.5rem}
-.carousel .carousel-arrow{position:absolute;z-index:2;top:calc(1.25rem + var(--figure-heading) + 1rem + var(--figure-height)/2);transform:translateY(-50%);width:48px;height:64px;padding:8px;border:0;border-radius:4px;background:transparent;color:rgba(16,29,58,.6);transition:color .2s ease;filter:drop-shadow(0 0 3px #fff)}
-.carousel .carousel-arrow:hover{background:transparent;color:var(--blue)}
+.carousel .carousel-arrow{position:absolute;z-index:2;top:calc(1.25rem + var(--figure-heading) + 1rem + var(--figure-height)/2);transform:translateY(-50%);width:48px;height:64px;padding:8px;border:1px solid rgba(75,91,116,.2);border-radius:50%;background:rgba(255,255,255,.88);color:var(--ink);box-shadow:0 2px 10px rgba(16,29,58,.12);opacity:.24;transition:opacity .22s ease,color .22s ease,background-color .22s ease,border-color .22s ease}
+.carousel:hover .carousel-arrow,.carousel:focus-within .carousel-arrow{opacity:.82}
+.carousel .carousel-arrow:hover,.carousel .carousel-arrow:focus-visible{opacity:1;background:rgba(255,255,255,.98);border-color:rgba(18,62,201,.35);color:var(--blue)}
+.carousel .carousel-arrow:focus-visible{outline-offset:-3px}
 .carousel .carousel-arrow[data-slide-prev]{left:.35rem}
 .carousel .carousel-arrow[data-slide-next]{right:.35rem}
 .carousel-arrow svg{width:32px;height:40px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .carousel .carousel-controls{display:flex;justify-content:center;padding:.35rem 1rem;border-top:0}
 .carousel .carousel-pagination{gap:.25rem .75rem}
 @media(max-width:760px){.carousel .slide{padding-inline:1rem}.carousel .carousel-arrow{top:calc(1rem + var(--figure-heading) + .8rem + var(--figure-height)/2);width:44px;height:56px}.carousel .carousel-arrow[data-slide-prev]{left:0}.carousel .carousel-arrow[data-slide-next]{right:0}.carousel-arrow svg{width:26px;height:32px}}
+@media(hover:none){.carousel .carousel-arrow{opacity:.85}}
 @media(prefers-reduced-motion:reduce){.carousel .carousel-arrow{transition:none}}
