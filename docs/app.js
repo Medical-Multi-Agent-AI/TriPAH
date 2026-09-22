@@ -41,20 +41,66 @@ const carousel = document.querySelector('.carousel');
 if (carousel) {
   const slides = [...carousel.querySelectorAll('.slide')];
   const dots = [...carousel.querySelectorAll('[data-slide]')];
+  const playback = document.querySelector('[data-slide-toggle]');
+  const status = document.getElementById('slide-status');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const interval = 6000;
   let currentSlide = 0;
-  function showSlide(index) {
+  let timer = null;
+  let paused = reducedMotion.matches;
+  let hovered = false;
+  let inView = false;
+  function schedule() {
+    window.clearTimeout(timer);
+    timer = null;
+    playback.textContent = paused ? 'Play' : 'Pause';
+    playback.setAttribute('aria-label', paused ? 'Start automatic slideshow' : 'Pause automatic slideshow');
+    if (!paused && !hovered && inView && !document.hidden) {
+      timer = window.setTimeout(() => showSlide(currentSlide + 1, false), interval);
+    }
+  }
+  function showSlide(index, manual = true) {
+    const previous = slides[currentSlide];
+    const focusedLink = previous.contains(document.activeElement) ? document.activeElement : null;
     currentSlide = (index + slides.length) % slides.length;
-    slides.forEach((slide, i) => { slide.hidden = i !== currentSlide; });
+    slides.forEach((slide, i) => {
+      slide.setAttribute('aria-hidden', String(i !== currentSlide));
+      slide.inert = i !== currentSlide;
+    });
+    slides[currentSlide].querySelector('img').loading = 'eager';
     dots.forEach((dot, i) => dot.setAttribute('aria-pressed', String(i === currentSlide)));
     carousel.querySelector('.slide-count').textContent = `${currentSlide + 1} / ${slides.length}`;
     carousel.querySelector('.gallery-open').href = slides[currentSlide].querySelector('.slide-visual').href;
-    document.getElementById('slide-status').textContent = slides[currentSlide].getAttribute('aria-label');
+    if (manual) {
+      status.setAttribute('aria-live', 'polite');
+      status.textContent = slides[currentSlide].getAttribute('aria-label');
+      if (focusedLink) {
+        const selector = focusedLink.matches('.slide-source') ? '.slide-source' : '.slide-visual';
+        slides[currentSlide].querySelector(selector).focus({preventScroll:true});
+      }
+    }
+    schedule();
   }
+  playback.hidden = false;
+  playback.addEventListener('click', () => { paused = !paused; schedule(); });
+  carousel.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') { hovered = true; schedule(); } });
+  carousel.addEventListener('pointerleave', event => { if (event.pointerType === 'mouse') { hovered = false; schedule(); } });
+  carousel.addEventListener('focusin', () => { paused = true; schedule(); });
+  document.addEventListener('visibilitychange', schedule);
+  reducedMotion.addEventListener('change', () => { if (reducedMotion.matches) paused = true; schedule(); });
+  const observer = new IntersectionObserver(entries => {
+    inView = entries[0].isIntersecting && entries[0].intersectionRatio >= .15;
+    if (inView) slides.forEach(slide => { slide.querySelector('img').loading = 'eager'; });
+    schedule();
+  }, {threshold:[0,.15]});
+  observer.observe(carousel);
+  schedule();
   carousel.querySelector('[data-slide-prev]').addEventListener('click', () => showSlide(currentSlide - 1));
   carousel.querySelector('[data-slide-next]').addEventListener('click', () => showSlide(currentSlide + 1));
   dots.forEach(dot => dot.addEventListener('click', () => showSlide(Number(dot.dataset.slide))));
   carousel.addEventListener('keydown', event => {
     if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      if (event.target.closest('.slide-visual')) return;
       event.preventDefault();
       showSlide(currentSlide + (event.key === 'ArrowRight' ? 1 : -1));
     }
@@ -63,6 +109,7 @@ if (carousel) {
   let suppressClick = false;
   carousel.addEventListener('pointerdown', event => {
     suppressClick = false;
+    if (event.pointerType === 'touch' && event.target.closest('.slide-visual')) { paused = true; schedule(); }
     if (event.pointerType === 'touch' && event.target.closest('.slide-visual') && !event.target.closest('.slide-qualitative')) {
       touchStart = {x:event.clientX, y:event.clientY};
     }

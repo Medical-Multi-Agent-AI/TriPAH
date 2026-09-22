@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#123ec9">
   <link rel="canonical" href="https://medical-multi-agent-ai.github.io/TriPAH/">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23123ec9'/%3E%3Cpath d='M7 8h18v5h-6v12h-6V13H7z' fill='white'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -52,31 +52,40 @@
       </details>
     </section>
     <section class="section" id="gallery">
-      <div class="gallery-heading"><h2>Inside the experiments</h2><span class="gallery-kind">Qualitative &amp; quantitative results</span></div>
-      <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Experimental figures" tabindex="0">
-        <figure class="slide slide-qualitative" id="slide-odir" role="group" aria-roledescription="slide" aria-label="1 of 4: ODIR-5K retrieval">
+      <div class="gallery-heading"><h2>Inside the experiments</h2><div class="gallery-tools"><span class="gallery-kind">Qualitative &amp; quantitative results</span><button class="carousel-playback" type="button" data-slide-toggle aria-controls="figure-carousel" aria-label="Pause automatic slideshow" hidden>Pause</button></div></div>
+      <div class="carousel" id="figure-carousel" role="region" aria-roledescription="carousel" aria-label="Experimental figures" tabindex="0">
+        <div class="carousel-stage">
+        <div class="carousel-track">
+        <figure class="slide slide-qualitative" id="slide-odir" role="group" aria-roledescription="slide" aria-label="1 of 4: ODIR-5K retrieval" aria-hidden="false">
           <div class="slide-header"><h3>ODIR-5K retrieval</h3><a class="slide-source" href="assets/demo.pdf">Original figure ↗</a></div>
           <a class="slide-visual" href="assets/qualitative-odir.webp" aria-label="Open full-size ODIR-5K retrieval example" draggable="false"><img src="assets/qualitative-odir.webp" alt="Qualitative ODIR-5K example from Figure 3: retrieval between binocular fundus images and diagnostic descriptions." loading="lazy" draggable="false"></a>
           <figcaption>Retrieval between fundus images and diagnostic descriptions. ODIR-5K example from Figure 3.<span class="mobile-hint"> Scroll the figure sideways to read it.</span></figcaption>
         </figure>
-        <figure class="slide slide-qualitative" id="slide-iu" role="group" aria-roledescription="slide" aria-label="2 of 4: IU-Xray retrieval" hidden>
+        <figure class="slide slide-qualitative" id="slide-iu" role="group" aria-roledescription="slide" aria-label="2 of 4: IU-Xray retrieval" aria-hidden="true" inert>
           <div class="slide-header"><h3>IU-Xray retrieval</h3><a class="slide-source" href="assets/demo.pdf">Original figure ↗</a></div>
           <a class="slide-visual" href="assets/qualitative-iu.webp" aria-label="Open full-size IU-Xray retrieval example" draggable="false"><img src="assets/qualitative-iu.webp" alt="Qualitative IU-Xray example from Figure 3: retrieved clinical reports with related chest findings." loading="lazy" draggable="false"></a>
           <figcaption>Retrieved reports with related clinical findings. IU-Xray example from Figure 3.<span class="mobile-hint"> Scroll the figure sideways to read it.</span></figcaption>
         </figure>
-        <figure class="slide" id="slide-retrieval" role="group" aria-roledescription="slide" aria-label="3 of 4: Bidirectional retrieval" hidden>
+        <figure class="slide" id="slide-retrieval" role="group" aria-roledescription="slide" aria-label="3 of 4: Bidirectional retrieval" aria-hidden="true" inert>
           <div class="slide-header"><h3>Bidirectional retrieval</h3><a class="slide-source" href="assets/tripah-paper.pdf#page=4">Table I in the paper ↗</a></div>
           <a class="slide-visual" href="assets/quantitative-retrieval.webp" aria-label="Open full-size retrieval performance chart" draggable="false"><picture><source media="(max-width: 760px)" srcset="assets/quantitative-retrieval-mobile.webp"><img src="assets/quantitative-retrieval.webp" alt="TriPAH mean mAP: ODIR-5K 0.937 image-to-text and 0.977 text-to-image; MIMIC-CXR 0.820 and 0.889; IU-Xray 0.896 in both directions." loading="lazy" draggable="false"></picture></a>
-          <figcaption>TriPAH mAP averaged over 32, 64, and 128 bits in both retrieval directions. Visualized from Table I.</figcaption>
+          <figcaption>TriPAH mAP averaged over 32, 64, and 128 bits in both retrieval directions. Visualized from Table I.<span class="mobile-hint"> Scroll within the figure to explore.</span></figcaption>
         </figure>
-        <figure class="slide" id="slide-ablation" role="group" aria-roledescription="slide" aria-label="4 of 4: Component ablation" hidden>
+        <figure class="slide" id="slide-ablation" role="group" aria-roledescription="slide" aria-label="4 of 4: Component ablation" aria-hidden="true" inert>
           <div class="slide-header"><h3>Component ablation</h3><a class="slide-source" href="assets/tripah-paper.pdf#page=6">Table IV in the paper ↗</a></div>
           <a class="slide-visual" href="assets/quantitative-ablation.webp" aria-label="Open full-size component ablation chart" draggable="false"><picture><source media="(max-width: 760px)" srcset="assets/quantitative-ablation-mobile.webp"><img src="assets/quantitative-ablation.webp" alt="Bidirectional mean mAP for the baseline, without tri-view fusion, without imbalance-aware hashing, and full TriPAH across ODIR-5K, MIMIC-CXR, and IU-Xray." loading="lazy" draggable="false"></picture></a>
-          <figcaption>Contribution of tri-view fusion and imbalance-aware hashing to bidirectional mean mAP. Visualized from Table IV.</figcaption>
+          <figcaption>Contribution of tri-view fusion and imbalance-aware hashing to bidirectional mean mAP. Visualized from Table IV.<span class="mobile-hint"> Scroll within the figure to explore.</span></figcaption>
         </figure>
+        </div>
+        <button class="carousel-arrow" type="button" data-slide-prev aria-label="Previous figure"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+        <button class="carousel-arrow" type="button" data-slide-next aria-label="Next figure"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+        </div>
         <div class="carousel-controls">
-          <div class="carousel-nav"><button class="carousel-arrow" type="button" data-slide-prev aria-label="Previous figure">←</button><span class="slide-count">1 / 4</span><button class="carousel-arrow" type="button" data-slide-next aria-label="Next figure">→</button></div>
+          <div class="carousel-pagination"><span class="slide-count">1 / 4</span>
           <div class="carousel-dots" role="group" aria-label="Choose a figure"><button type="button" data-slide="0" aria-controls="slide-odir" aria-label="Show ODIR-5K retrieval" aria-pressed="true"></button><button type="button" data-slide="1" aria-controls="slide-iu" aria-label="Show IU-Xray retrieval" aria-pressed="false"></button><button type="button" data-slide="2" aria-controls="slide-retrieval" aria-label="Show bidirectional retrieval" aria-pressed="false"></button><button type="button" data-slide="3" aria-controls="slide-ablation" aria-label="Show component ablation" aria-pressed="false"></button></div>
+          </div>
+        </div>
+        <div class="gallery-footer">
           <a class="gallery-open" href="assets/qualitative-odir.webp">Open full-size image ↗</a>
         </div>
         <p class="sr-only" id="slide-status" aria-live="polite" aria-atomic="true"></p>
@@ -104,5 +113,5 @@
     </section>
   </main>
   <footer><a class="brand" href="#">TriPAH</a><span>Medical-Multi-Agent-AI</span><span class="template-credit">Layout inspired by <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> and <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page</a>.</span></footer>
-  <script src="app.js?v=4" defer></script>
+  <script src="app.js?v=6" defer></script>
 </body></html>

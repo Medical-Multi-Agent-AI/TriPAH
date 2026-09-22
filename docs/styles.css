@@ -43,3 +43,37 @@
 .hero .hero-intro{font-size:1.5rem;line-height:1.6;max-width:940px;margin-top:1.5rem}
 @media(max-width:1100px){.hero .desktop-break{display:none}}
 @media(max-width:600px){.hero .venue{font-size:1.125rem}.hero .paper-title{font-size:2rem}.hero .authors{font-size:1.25rem}.hero .affiliation{font-size:1.25rem}.hero .affiliation span{font-size:1.125rem}.hero-actions .button{font-size:1.125rem;min-width:0;min-height:52px}.hero .hero-intro{font-size:1.25rem}}
+
+/* Every slide shares a fixed viewport and the tallest caption's grid row. */
+.gallery-tools{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.carousel-playback{min-height:44px;min-width:78px;padding:.35rem .9rem;background:#fff;border:1px solid #bcc9df;border-radius:5px;color:var(--blue);font-size:1rem;cursor:pointer}
+.carousel-playback:hover{background:var(--surface)}
+.carousel{--figure-height:clamp(300px,38vw,520px);--figure-heading:3.5rem}
+.carousel-track{display:grid;isolation:isolate}
+.carousel .slide{grid-area:1/1;min-width:0;display:grid;grid-template-rows:var(--figure-heading) var(--figure-height) 1fr;gap:1rem;padding:1.25rem 1.5rem 1rem;opacity:1;visibility:visible;transition:opacity .32s ease,visibility 0s}
+.carousel .slide[aria-hidden=true]{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .32s ease,visibility 0s .32s}
+.carousel .slide-header{margin:0;align-self:center}
+.carousel .slide-visual{display:flex;align-items:center;width:100%;height:var(--figure-height);min-height:0;aspect-ratio:auto;overflow:hidden}
+.carousel .slide-visual picture{display:block;width:100%;height:100%}
+.carousel .slide-visual img{width:100%;height:100%;min-width:0;object-fit:contain}
+.carousel .slide figcaption{min-height:0;margin:0}
+.carousel .carousel-controls{display:grid;grid-template-columns:48px minmax(0,1fr) 48px;gap:1rem;padding:.8rem 1.5rem}
+.carousel-pagination{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.25rem 1rem;min-width:0}
+.gallery-footer{text-align:center;padding:0 1rem .8rem}
+.gallery-footer .gallery-open{display:inline-block;width:auto}
+@media(max-width:760px){.carousel{--figure-height:clamp(300px,92vw,440px);--figure-heading:6rem}.carousel .slide{padding:1rem;gap:.8rem}.carousel .slide-visual{overflow:auto;overscroll-behavior:contain;touch-action:pan-x pan-y}.carousel .slide:not(.slide-qualitative) .slide-visual{align-items:flex-start}.carousel .slide:not(.slide-qualitative) .slide-visual picture{height:auto;min-height:100%}.carousel .slide:not(.slide-qualitative) .slide-visual img{height:auto}.carousel .slide-qualitative .slide-visual img{min-width:900px;height:auto}.carousel .mobile-hint{display:inline}.carousel .carousel-controls{padding:.75rem 1rem;gap:.5rem}.carousel-pagination{gap:.35rem}.carousel-dots{gap:0}.carousel-dots button{width:32px;height:44px}.carousel .slide-visual:focus-visible{outline-offset:-3px}}
+@media(prefers-reduced-motion:reduce){.carousel .slide,.carousel .slide[aria-hidden=true]{transition:none}}
+@media(max-width:760px){.carousel .carousel-controls{grid-template-columns:44px minmax(0,1fr) 44px}.carousel .carousel-arrow{min-width:44px;min-height:44px}}
+
+/* Transparent arrows sit beside the figure instead of in a separate toolbar. */
+.carousel-stage{position:relative}
+.carousel .slide{padding-inline:3.5rem}
+.carousel .carousel-arrow{position:absolute;z-index:2;top:calc(1.25rem + var(--figure-heading) + 1rem + var(--figure-height)/2);transform:translateY(-50%);width:48px;height:64px;padding:8px;border:0;border-radius:4px;background:transparent;color:rgba(16,29,58,.6);transition:color .2s ease;filter:drop-shadow(0 0 3px #fff)}
+.carousel .carousel-arrow:hover{background:transparent;color:var(--blue)}
+.carousel .carousel-arrow[data-slide-prev]{left:.35rem}
+.carousel .carousel-arrow[data-slide-next]{right:.35rem}
+.carousel-arrow svg{width:32px;height:40px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.carousel .carousel-controls{display:flex;justify-content:center;padding:.35rem 1rem;border-top:0}
+.carousel .carousel-pagination{gap:.25rem .75rem}
+@media(max-width:760px){.carousel .slide{padding-inline:1rem}.carousel .carousel-arrow{top:calc(1rem + var(--figure-heading) + .8rem + var(--figure-height)/2);width:44px;height:56px}.carousel .carousel-arrow[data-slide-prev]{left:0}.carousel .carousel-arrow[data-slide-next]{right:0}.carousel-arrow svg{width:26px;height:32px}}
+@media(prefers-reduced-motion:reduce){.carousel .carousel-arrow{transition:none}}
