@@ -13,7 +13,7 @@
 /* Responsive research content: preserve legibility instead of shrinking figures or tables. */
 .table-scroll td{position:relative}.carousel{position:relative}
 .slide-visual picture{display:block;width:100%;height:100%}.slide-qualitative .slide-visual{aspect-ratio:auto}.slide-qualitative .slide-visual img{height:auto}
-.authors>span{display:inline-block;white-space:nowrap}.hero-actions .button{border-radius:999px}.template-credit{width:100%;font-size:1rem}.template-credit a{color:var(--blue)}
+.authors>span{display:inline-block;white-space:nowrap}.hero-actions .button{border-radius:999px}
 [hidden]{display:none!important}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
 .header,.hero,.section,footer{max-width:1240px;width:calc(100% - clamp(2rem,7vw,7rem))}
 .hero{padding-top:2.5rem;padding-bottom:3rem}.hero-intro{margin-top:1.6rem}.hero-actions .button{min-width:140px}
