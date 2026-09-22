@@ -1,8 +1,8 @@
 # TriPAH: Imbalance-Aware Tri-Prompt Affinity Hashing for Cross-Modal Medical Retrieval
 
-**Jiaming Bian, Songming Li, Yurui Song, Yunfei Chen<sup>*</sup>, Yichao Cao<sup>*</sup>, Jun Long<sup>*</sup>**<br>
+**Jiaming Bian, Songming Li, Yurui Song, Yunfei Chen<sup>&#42;</sup>, Yichao Cao<sup>&#42;</sup>, Jun Long<sup>&#42;</sup>**<br>
 Big Data Institute, Central South University, Changsha, China<br>
-<sup>*</sup>Corresponding authors
+<sup>&#42;</sup> **Co-corresponding authors: Yunfei Chen, Yichao Cao, and Jun Long.**
 
 **Accepted at ICME 2026 as an Oral presentation.**
 
@@ -200,4 +200,4 @@ If you use TriPAH in your research, please use the following arXiv citation:
 
 The repository retains its [Apache 2.0 license](LICENSE). See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for upstream attribution and component-specific terms. The implementation builds on prior open-source hashing code and includes components from [OpenCLIP](https://github.com/mlfoundations/open_clip), [MetaCLIP](https://github.com/facebookresearch/MetaCLIP), [Mamba](https://github.com/state-spaces/mamba), and [CMCL](https://github.com/DarrenZZhang/CMCL). Bundled components retain their respective licenses and original copyright notices.
 
-For code questions, please [open an issue](https://github.com/Medical-Multi-Agent-AI/TriPAH/issues). For research correspondence, contact [Jiaming Bian](mailto:bianjiaming@csu.edu.cn).
+For project and code questions, please [open an issue](https://github.com/Medical-Multi-Agent-AI/TriPAH/issues) or contact [Jiaming Bian](mailto:bianjiaming@csu.edu.cn). The paper's co-corresponding authors are Yunfei Chen, Yichao Cao, and Jun Long.
