@@ -180,7 +180,7 @@ model/                 Model modules and bundled OpenCLIP implementation
 utils/                 Arguments, metrics, logging, and raw-data paths
 tools/                 Experiment scripts and result collection
 examples/              Retrieval visualization utilities
-website/               Public project page, paper, and figures
+docs/                  Public project page, paper, and figures (GitHub Pages)
 ```
 
 ## Citation
