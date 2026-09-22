@@ -21,6 +21,6 @@ python -m http.server 4173 --directory docs
 
 ## Layout references
 
-The figure carousel advances every six seconds while visible. Left/right arrows and dots select figures; Pause/Play controls automatic playback. Hovering pauses playback, focus pauses until Play is selected, and reduced-motion preferences disable automatic playback by default. All slides share a fixed image viewport and equal card height. On small screens, wide qualitative panels scroll horizontally and portrait charts scroll vertically inside that viewport; full-size links remain available.
+The figure carousel advances every six seconds while visible. Hovering pauses playback, and moving the pointer away resumes it automatically, including after a manual arrow click. Left/right arrows and dots select figures. Keyboard focus and touch interaction temporarily pause playback; reduced-motion preferences disable it. All slides share a fixed image viewport and equal card height. On small screens, wide qualitative panels scroll horizontally and portrait charts scroll vertically inside that viewport; full-size links remain available.
 
 The independently implemented HTML/CSS/JavaScript draws layout inspiration from [Nerfies](https://github.com/nerfies/nerfies.github.io) and the [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template): centered paper metadata, grouped resource links, wide research figures, and a captioned single-image carousel. Template source files and their demo assets are not bundled.

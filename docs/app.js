@@ -41,21 +41,19 @@ const carousel = document.querySelector('.carousel');
 if (carousel) {
   const slides = [...carousel.querySelectorAll('.slide')];
   const dots = [...carousel.querySelectorAll('[data-slide]')];
-  const playback = document.querySelector('[data-slide-toggle]');
   const status = document.getElementById('slide-status');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const interval = 6000;
   let currentSlide = 0;
   let timer = null;
-  let paused = reducedMotion.matches;
   let hovered = false;
+  let keyboardFocus = false;
+  let touching = false;
   let inView = false;
   function schedule() {
     window.clearTimeout(timer);
     timer = null;
-    playback.textContent = paused ? 'Play' : 'Pause';
-    playback.setAttribute('aria-label', paused ? 'Start automatic slideshow' : 'Pause automatic slideshow');
-    if (!paused && !hovered && inView && !document.hidden) {
+    if (!hovered && !keyboardFocus && !touching && !reducedMotion.matches && inView && !document.hidden) {
       timer = window.setTimeout(() => showSlide(currentSlide + 1, false), interval);
     }
   }
@@ -81,13 +79,14 @@ if (carousel) {
     }
     schedule();
   }
-  playback.hidden = false;
-  playback.addEventListener('click', () => { paused = !paused; schedule(); });
   carousel.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') { hovered = true; schedule(); } });
   carousel.addEventListener('pointerleave', event => { if (event.pointerType === 'mouse') { hovered = false; schedule(); } });
-  carousel.addEventListener('focusin', () => { paused = true; schedule(); });
+  carousel.addEventListener('focusin', event => { keyboardFocus = event.target.matches(':focus-visible'); schedule(); });
+  carousel.addEventListener('focusout', event => {
+    if (!carousel.contains(event.relatedTarget)) { keyboardFocus = false; schedule(); }
+  });
   document.addEventListener('visibilitychange', schedule);
-  reducedMotion.addEventListener('change', () => { if (reducedMotion.matches) paused = true; schedule(); });
+  reducedMotion.addEventListener('change', schedule);
   const observer = new IntersectionObserver(entries => {
     inView = entries[0].isIntersecting && entries[0].intersectionRatio >= .15;
     if (inView) slides.forEach(slide => { slide.querySelector('img').loading = 'eager'; });
@@ -99,6 +98,8 @@ if (carousel) {
   carousel.querySelector('[data-slide-next]').addEventListener('click', () => showSlide(currentSlide + 1));
   dots.forEach(dot => dot.addEventListener('click', () => showSlide(Number(dot.dataset.slide))));
   carousel.addEventListener('keydown', event => {
+    keyboardFocus = true;
+    schedule();
     if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
       if (event.target.closest('.slide-visual')) return;
       event.preventDefault();
@@ -109,7 +110,9 @@ if (carousel) {
   let suppressClick = false;
   carousel.addEventListener('pointerdown', event => {
     suppressClick = false;
-    if (event.pointerType === 'touch' && event.target.closest('.slide-visual')) { paused = true; schedule(); }
+    keyboardFocus = false;
+    if (event.pointerType === 'touch') touching = true;
+    schedule();
     if (event.pointerType === 'touch' && event.target.closest('.slide-visual') && !event.target.closest('.slide-qualitative')) {
       touchStart = {x:event.clientX, y:event.clientY};
     }
@@ -125,6 +128,11 @@ if (carousel) {
     }
   });
   carousel.addEventListener('pointercancel', () => { touchStart = null; });
+  function finishTouch() {
+    if (touching) { touching = false; schedule(); }
+  }
+  window.addEventListener('pointerup', finishTouch);
+  window.addEventListener('pointercancel', finishTouch);
   carousel.addEventListener('click', event => {
     if (suppressClick && event.target.closest('.slide-visual')) {
       event.preventDefault();
